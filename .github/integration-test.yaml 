@@ -39,3 +39,5 @@ jobs:
       - name: Start pyspark job
         run: |
           bash scripts/run-job.sh $APPLICATION_ID $JOB_ROLE_ARN $S3_BUCKET_NAME $GITHUB_SHA integration_test.py s3://${S3_BUCKET_NAME}/github/traffic/
+
+        
