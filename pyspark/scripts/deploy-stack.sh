@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-set -e # failed fast. Exit script as soon as error occured. Prevent end less run  
 
-#STACK_NAME=$1
-STACK_NAME="ldisparkserverless"
+STACK_NAME=$1
 REPO="xvanausloos/ci-cd-serverless-spark"
 TEMPLATE_FILE="cloud-formation-stack-template.yaml"
 
@@ -10,6 +8,8 @@ if [ -z "$1" ]
   then
     echo "No STACK_NAME argument supplied"
     exit 1
+  else
+    echo "stack name provided $STACK_NAME"
 fi
 
 aws cloudformation create-stack \
