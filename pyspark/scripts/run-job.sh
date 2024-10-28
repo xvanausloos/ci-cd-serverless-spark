@@ -12,7 +12,7 @@ SPARK_JOB_PARAMS=(${@:6})
 
 
 echo "application id: $APPLICATION_ID"
-
+echo "job_role_arn: $JOB_ROLE_ARN"
 
 # Convert the passed Spark job params into a JSON array
 # WARNING: Assumes there are job params
@@ -61,3 +61,4 @@ if [ "$JOB_STATUS" = "SUCCESS" ]; then
         && aws s3 cp s3://${S3_BUCKET}/logs/applications/${APPLICATION_ID}/jobs/${JOB_RUN_ID}/SPARK_DRIVER/stdout.gz - | gunzip \ 
         || echo "No job output"
 fi
+
