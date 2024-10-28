@@ -4,7 +4,7 @@ on:
     types: [opened, reopened, synchronize]
 
 env:
-  APPLICATION_ID: 00fngah2ntvlit09  
+  APPLICATION_ID: 00fnh2rhlr0sms09  
   S3_BUCKET_NAME: gh-actions-serverless-spark-prod-583893076311
   JOB_ROLE_ARN: arn:aws:iam::583893076311:role/gh-actions-job-execution-role-583893076311
   OIDC_ROLE_ARN: arn:aws:iam::583893076311:role/gh-actions-oidc-role-583893076311
@@ -37,6 +37,7 @@ jobs:
           aws s3 cp job_files.zip s3://$S3_BUCKET_NAME/github/pyspark/jobs/$GITHUB_SHA/
 
       - name: Start pyspark job
-        run: |
+        run: |          
           bash scripts/run-job.sh $APPLICATION_ID $JOB_ROLE_ARN $S3_BUCKET_NAME $GITHUB_SHA integration_test.py s3://${S3_BUCKET_NAME}/github/traffic/
         
+          
