@@ -12,6 +12,9 @@ if [ -z "$1" ]
     echo "stack name provided $STACK_NAME"
 fi
 
+# delete existing buckets in us-east-1 having name gh-actions-serverless-spark-prod-583893076311
+
+
 aws cloudformation create-stack \
   --stack-name $STACK_NAME \
   --template-body file://$TEMPLATE_FILE \
