@@ -10,9 +10,12 @@ JOB_VERSION=$4
 ENTRY_POINT=$5
 SPARK_JOB_PARAMS=(${@:6})
 
-
+echo "entry point: $ENTRY_POINT"
 echo "application id: $APPLICATION_ID"
 echo "job_role_arn: $JOB_ROLE_ARN"
+echo "S3 bucket: $S3_BUCKET"
+echo "job_version: $JOB_VERSION"
+echo "spark_args: $SPARK_ARGS"
 
 # Convert the passed Spark job params into a JSON array
 # WARNING: Assumes there are job params
