@@ -10,8 +10,8 @@ JOB_VERSION=$4
 ENTRY_POINT=$5
 SPARK_JOB_PARAMS=(${@:6})
 
-echo "xavier" 
-echo $APPLICATION_ID
+
+echo "application id: $APPLICATION_ID"
 
 
 # Convert the passed Spark job params into a JSON array
