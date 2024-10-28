@@ -10,6 +10,10 @@ JOB_VERSION=$4
 ENTRY_POINT=$5
 SPARK_JOB_PARAMS=(${@:6})
 
+echo "xavier" 
+echo $APPLICATION_ID
+
+
 # Convert the passed Spark job params into a JSON array
 # WARNING: Assumes there are job params
 printf -v SPARK_ARGS '"%s",' "${SPARK_JOB_PARAMS[@]}"
